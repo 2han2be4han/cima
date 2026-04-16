@@ -31,7 +31,7 @@
   height: 100vh;
   z-index: 9999;
   background-color: var(--main);
-  transition: transform 2.0s cubic-bezier(0.7, 0, 0.3, 1), opacity 2.0s ease;
+  transition: transform 2.5s cubic-bezier(0.7, 0, 0.3, 1), opacity 2.5s ease;
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -45,12 +45,12 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   opacity: 1;
-  transition: opacity 1s ease;
+  transition: opacity 1.5s ease;
 }
 
 .curtain-overlay.is-opened {
   transform: translateY(-100%);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .curtain-overlay.is-opened .curtain-logo {
