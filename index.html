@@ -21,8 +21,20 @@
   <meta property="og:url" content="https://cima-wedding.jp/">
   <meta property="og:site_name" content="株式会社CIMA">
   <meta property="og:image" content="images/common/ogp.jpg">
+  <!-- JS -->
+  <script src="js/entrance-animation.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/parallax.js" defer></script>
+  <script src="js/scroll-animation.js" defer></script>
+  <script src="js/cms.js" defer></script>
 </head>
 <body>
+
+  <!-- Curtain Overlay -->
+  <div class="curtain-overlay">
+    <div class="curtain-panel"></div>
+    <div class="curtain-panel"></div>
+  </div>
 
   <!-- Header -->
   <header class="site-header">
@@ -49,15 +61,15 @@
   <main>
     <!-- Hero Section -->
     <section class="hero-section parallax" data-speed="0.8" style="background-image: url('images/hero/hero-shinojima.jpg');">
-      <div class="hero-overlay"></div>
+      <div class="hero-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));"></div>
       <div class="container hero-inner">
         <div class="fade-in">
-          <p class="sec-label" style="color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.5);">FREE STYLE WEDDING & SHINOJIMA SERVICE</p>
-          <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 24px;">自由を求める<br>ウエディング。</h1>
-          <p class="hero-desc" style="font-size: 1.125rem; max-width: 600px; margin: 0 auto 40px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">特定の式場という「枠」にとらわれず、<br>お二人が心から望む場所で、最高の瞬間をプロデュースします。</p>
-          <div class="hero-btns">
-            <a href="contact.html" class="btn btn-hero-primary">無料相談はこちら</a>
-            <a href="service.html" class="btn btn-hero-secondary">コンセプトを見る</a>
+          <p class="sec-label" style="color: rgba(255,255,255,0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.3);">FREE STYLE WEDDING & SHINOJIMA SERVICE</p>
+          <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 32px; letter-spacing: 0.05em;">自由を求める<br>ウエディング。</h1>
+          <p class="hero-desc" style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 48px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); font-weight: 300; opacity: 0.95;">特定の式場という「枠」にとらわれず、<br>お二人が心から望む場所で、最高の瞬間をプロデュースします。</p>
+          <div class="hero-btns" style="display: flex; gap: 20px; justify-content: center;">
+            <a href="contact.html" class="btn btn-primary" style="padding: 18px 48px;">無料相談はこちら</a>
+            <a href="service.html" class="btn btn-hero-secondary" style="padding: 18px 48px;">コンセプトを見る</a>
           </div>
         </div>
       </div>

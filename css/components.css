@@ -66,14 +66,14 @@ img {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform 0.3s var(--transition), box-shadow 0.3s var(--transition);
+  box-shadow: 0 10px 30px rgba(44, 24, 26, 0.05);
+  transition: transform 0.4s var(--transition), box-shadow 0.4s var(--transition);
   overflow: hidden;
 }
 
 .card:hover {
-  transform: scale(1.03);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(44, 24, 26, 0.08);
 }
 
 /* Button Variants */
@@ -81,24 +81,26 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 32px;
-  border-radius: var(--radius);
+  padding: 14px 36px;
+  border-radius: 40px;
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
+  letter-spacing: 0.05em;
   cursor: pointer;
   border: none;
-  transition: all 0.3s var(--transition);
+  transition: all 0.4s var(--transition);
 }
 
 .btn-primary {
-  background-color: var(--main);
+  background-color: var(--cta-custom);
   color: #fff;
 }
 
 .btn-primary:hover {
   background-color: var(--sub);
-  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(142, 29, 44, 0.3);
 }
 
 .btn-hero-primary {
