@@ -33,11 +33,28 @@
   background-color: var(--main);
   transition: transform 2.0s cubic-bezier(0.7, 0, 0.3, 1), opacity 2.0s ease;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.curtain-logo {
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  opacity: 1;
+  transition: opacity 1s ease;
 }
 
 .curtain-overlay.is-opened {
   transform: translateY(-100%);
-  opacity: 0.8;
+  opacity: 0.9;
+}
+
+.curtain-overlay.is-opened .curtain-logo {
+  opacity: 0;
 }
 
 .curtain-panel {
