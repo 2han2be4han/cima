@@ -1,0 +1,34 @@
+:root {
+  /* Colors */
+  --main: #c13e3e;
+  --sub: #6a2222;
+  --accent: #ff6f0c;
+  --bg: #ffffff;
+  --bg-gray: #f8fafc;
+  --bg-dark: #1a1a1a;
+  --ink: #1f2937;
+  --ink-light: #6b7280;
+  --ink-muted: #9ca3af;
+  --border: #f3f4f6;
+  --cta-custom: #ea580c;
+
+  /* Layout */
+  --container-max: 1280px;
+  --section-pad: 80px;
+  --section-pad-md: 60px;
+  --section-pad-sm: 40px;
+
+  /* Components */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-btn: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  /* Fonts */
+  --font-serif: "Noto Serif JP", serif;
+  --font-sans: "Noto Sans JP", sans-serif;
+
+  /* Transitions */
+  --transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}

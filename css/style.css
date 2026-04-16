@@ -1,0 +1,18 @@
+@import url('variables.css');
+@import url('components.css');
+@import url('animations.css');
+@import url('responsive.css');
+
+/* Custom overrides or page-specific tweaks can go here */
+.divider svg {
+  width: 100%;
+  height: auto;
+  min-height: 40px;
+}
+
+/* Parallax fallback for Mobile */
+@media (hover: none) {
+  .hero-section, .service-parallax {
+    background-attachment: scroll !important;
+  }
+}

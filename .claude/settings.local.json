@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm list:*)",
+      "Bash(node docs/generate-docx.js)",
+      "Bash(npm init:*)",
+      "Bash(python \"C:/Users/2han2/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/e283ea0b-20ac-497b-9bc6-c21fefc8a24b/40b3c756-c5b4-4eb0-b344-f7a87c2dfb70/skills/docx/scripts/office/validate.py\" \"C:/Users/2han2/Projects/株式会社CIMA/docs/株式会社CIMA_HP仕様書.docx\")",
+      "Bash(pip install:*)"
+    ]
+  }
+}

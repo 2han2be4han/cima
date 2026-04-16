@@ -1,0 +1,58 @@
+/* Tablet (768px - 1279px) */
+@media screen and (max-width: 1279px) {
+  :root {
+    --section-pad: var(--section-pad-md);
+  }
+
+  .grid-r {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Mobile (767px以下) */
+@media screen and (max-width: 767px) {
+  :root {
+    --section-pad: var(--section-pad-sm);
+  }
+
+  body {
+    font-size: 0.9375rem; /* Smaller font size as per specification */
+  }
+
+  .grid-r {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-inner {
+    padding: 40px 20px !important;
+    text-align: center !important;
+  }
+
+  .hero-inner h1 {
+    font-size: 1.75rem !important;
+  }
+
+  .sec-title {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+  }
+
+  /* Floating CTA Full Width */
+  .floating-cta {
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .btn-floating {
+    width: 100%;
+    border-radius: 0;
+    padding: 16px;
+    font-size: 1rem;
+  }
+
+  /* Hide regular header items if any */
+  .btn-hdr {
+    display: none;
+  }
+}
