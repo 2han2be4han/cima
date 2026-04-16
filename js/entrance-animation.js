@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
         curtain.classList.add('is-opened');
     }, 1200);
 
-    // 演出終了後にロック解除とクリーンアップ（1.2s + 2.5s = 3.7s）
+    // 演出終了後にロック解除とクリーンアップ（1.2s + 2.2s = 3.4s）
     setTimeout(() => {
         document.body.classList.remove('is-locked');
         
         // 消えきるまで待ってからDOMから削除
         setTimeout(() => {
             curtain.style.display = 'none';
-        }, 2500);
-    }, 3700);
+        }, 2200);
+    }, 3400);
 });

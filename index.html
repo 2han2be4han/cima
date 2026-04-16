@@ -73,8 +73,16 @@
         </div>
       </div>
       <div class="divider">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="#f8fafc"></path>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax-waves">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(248,250,252,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(248,250,252,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(248,250,252,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#f8fafc" />
+          </g>
         </svg>
       </div>
     </section>
@@ -99,30 +107,59 @@
       </div>
     </section>
 
+    <!-- Curve Divider -->
+    <div class="section-divider fade-in">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" fill="#fff"></path>
+      </svg>
+    </div>
+
     <!-- Service Section -->
     <section id="service" class="sec-pad">
       <div class="container">
         <p class="sec-label">OUR SERVICES</p>
         <h2 class="sec-title">提供サービス</h2>
-        <div class="grid-r" style="grid-template-columns: repeat(3, 1fr);">
-          <div class="card fade-in" style="padding: 40px; text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--main); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-weight: 900;">01</div>
-            <h3 style="margin-bottom: 16px;">FREE STYLE WEDDING</h3>
-            <p style="font-size: 0.875rem; color: var(--ink-light);">決まった場所、決まった進行ではなく、お二人のストーリーに合わせた「自由な式」を企画します。</p>
+        <div class="grid-r" style="grid-template-columns: repeat(3, 1fr); gap: 32px;">
+          <div class="card fade-in">
+            <div class="card-image-box">
+              <img src="images/services/wedding.png" alt="FREE STYLE WEDDING">
+              <div class="card-number">01</div>
+            </div>
+            <div style="padding: 32px; text-align: center;">
+              <h3 style="margin-bottom: 16px;">FREE STYLE WEDDING</h3>
+              <p style="font-size: 0.875rem; color: var(--ink-light);">決まった場所、決まった進行ではなく、お二人のストーリーに合わせた「自由な式」を企画します。</p>
+            </div>
           </div>
-          <div class="card fade-in" style="padding: 40px; text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--main); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-weight: 900;">02</div>
-            <h3 style="margin-bottom: 16px;">SHINOJIMA BBQ</h3>
-            <p style="font-size: 0.875rem; color: var(--ink-light);">篠島の海を望むBBQ Dieux Terraceでのイベント。観光、レジャー、懇親会をトータルサポート。</p>
+          <div class="card fade-in">
+            <div class="card-image-box">
+              <img src="images/services/bbq.png" alt="SHINOJIMA BBQ">
+              <div class="card-number">02</div>
+            </div>
+            <div style="padding: 32px; text-align: center;">
+              <h3 style="margin-bottom: 16px;">SHINOJIMA BBQ</h3>
+              <p style="font-size: 0.875rem; color: var(--ink-light);">篠島の海を望むBBQ Dieux Terraceでのイベント。観光、レジャー、懇親会をトータルサポート。</p>
+            </div>
           </div>
-          <div class="card fade-in" style="padding: 40px; text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--main); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-weight: 900;">03</div>
-            <h3 style="margin-bottom: 16px;">REGION REVIVAL</h3>
-            <p style="font-size: 0.875rem; color: var(--ink-light);">離島・篠島の魅力を世界に発信。持続可能な地域づくりを目指したイベント企画を行っています。</p>
+          <div class="card fade-in">
+            <div class="card-image-box">
+              <img src="images/services/revival.png" alt="REGION REVIVAL">
+              <div class="card-number">03</div>
+            </div>
+            <div style="padding: 32px; text-align: center;">
+              <h3 style="margin-bottom: 16px;">REGION REVIVAL</h3>
+              <p style="font-size: 0.875rem; color: var(--ink-light);">離島・篠島の魅力を世界に発信。持続可能な地域づくりを目指したイベント企画を行っています。</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Tilt Divider -->
+    <div class="section-divider fade-in">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,100 L1440,0 L1440,100 L0,100 Z" fill="#f8fafc"></path>
+      </svg>
+    </div>
 
     <!-- CMS Content: NEWS (Will be dynamic later) -->
     <section id="news" class="sec-pad" style="background-color: var(--bg-gray);">
@@ -135,6 +172,13 @@
         </div>
       </div>
     </section>
+
+    <!-- Curve Divider (Reverse) -->
+    <div class="section-divider fade-in">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,100 C480,0 960,0 1440,100 L1440,100 L0,100 Z" fill="#fff"></path>
+      </svg>
+    </div>
 
     <!-- Map Section -->
     <section id="map" class="sec-pad">
