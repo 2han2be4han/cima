@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
         curtain.classList.add('is-opened');
     }, 100);
 
-    // 0.8秒後にロック解除と要素のクリーンアップ
+    // 2.0秒後にロック解除と要素のクリーンアップ
     setTimeout(() => {
         document.body.classList.remove('is-locked');
         
-        // アニメーション完了後にDOMから削除（パフォーマンスのため）
+        // アニメーション完了後にDOMから削除
         setTimeout(() => {
             curtain.style.display = 'none';
-        }, 800);
-    }, 800);
+        }, 2000);
+    }, 2000);
 });
