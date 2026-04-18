@@ -746,8 +746,9 @@ img {
 /* Hero Section Refinement */
 .hero-section {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  height: auto;
+  min-height: 780px;
+  height: clamp(780px, 108vh, 960px);
   background:
     linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.15) 50%, rgba(15, 23, 42, 0.55) 100%),
     url('../images/松島の夕日_2017-12-02_16-34-25.jpg') center / cover no-repeat,
@@ -757,6 +758,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding-bottom: 300px; /* keep content clear of the wave band */
   overflow: hidden;
   color: #fff;
 }
