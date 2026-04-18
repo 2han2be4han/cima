@@ -21,8 +21,12 @@ const MOCK_DATA = {
     { id: '2', date: '2026-04-10', category: 'イベント', title: '篠島BBQサンセットプラン予約受付中' }
   ],
   locations: [
-    { id: 'venue-01', area: '篠島 / 南知多', title: 'BBQ Dieux Terrace', description: '海を一望するパノラマビュー。夕日の美しい特等席です。' },
-    { id: 'venue-02', area: '篠島 / 南知多', title: '篠島サンライズビーチ', description: '白い砂浜と透き通る海。ビーチウエディングの聖地です。' }
+    { id: 'venue-01', area: '篠島 / 南知多', title: 'BBQ Dieux Terrace', description: '海を一望するパノラマビュー。夕日の美しい特等席で、オープンエアのウエディングパーティを。' },
+    { id: 'venue-02', area: '篠島 / 南知多', title: '篠島サンライズビーチ', description: '白い砂浜と透き通る海。ビーチウエディングの聖地で、朝日と共に誓いの瞬間を迎える。' },
+    { id: 'venue-03', area: '篠島 / 南知多', title: '神明神社', description: '島の鎮守の森に佇む静謐な社殿。厳かな神前式を、島の伝統と共にお迎えします。' },
+    { id: 'venue-04', area: '南知多', title: '羽豆岬灯台', description: '岬の先端に立つ白亜の灯台。太平洋を背景にした、映画のようなロケーション。' },
+    { id: 'venue-05', area: '日間賀島 / 南知多', title: '日間賀島 サンセットテラス', description: '三河湾に沈む夕日を独り占め。離島だけが叶える贅沢な時間を。' },
+    { id: 'venue-06', area: '知多半島', title: '内海プライベートヴィラ', description: '海辺の一棟貸しヴィラで、ゲストと過ごす週末型ウエディング。' }
   ]
 };
 
@@ -71,13 +75,15 @@ function renderNews(news, container) {
 
 function renderLocations(locations, container) {
   container.innerHTML = locations.map(item => `
-    <a href="wedding-venues/detail.html?id=${item.id}" class="card fade-in" style="display: block;">
-      <div style="aspect-ratio: 16/9; background: var(--border);"></div>
-      <div style="padding: 32px;">
-        <span style="font-size: 0.75rem; color: var(--main); font-weight: 700;">${item.area}</span>
-        <h3 style="font-size: 1.5rem; margin-top: 12px; margin-bottom: 12px;">${item.title}</h3>
-        <p style="font-size: 0.9375rem; color: var(--ink-light);">${item.description}</p>
+    <a href="wedding-venues/detail.html?id=${item.id}" class="location-card">
+      <div class="location-thumb">
+        ${item.image
+          ? `<img src="${item.image}" alt="${item.title}" loading="lazy">`
+          : `<div class="location-thumb-placeholder">${item.title}</div>`}
       </div>
+      <span class="location-area">${item.area}</span>
+      <h3 class="location-title">${item.title}</h3>
+      <p class="location-desc">${item.description}</p>
     </a>
   `).join('');
 }

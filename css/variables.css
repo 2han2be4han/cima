@@ -1,29 +1,51 @@
 :root {
-  /* Colors */
-  --main: #722f37;
-  --sub: #4a1c21;
-  --accent: #8e1d2c;
+  /* Colors - Shinojima Editorial Palette */
+  --main: #111827;              /* ink as primary brand */
+  --main-light: #374151;
+  --main-dark: #030712;
+  --accent: #c13e3e;            /* Sunset red — the sun over Shinojima */
+  --accent-warm: #e26848;       /* morning sun glow */
+  --accent-dark: #6a2222;
+  --gold: #b8956a;
+  --paper: #faf8f5;             /* warm off-white */
+  /* Island atmosphere */
+  --sky: #eef4f6;               /* dawn sky tint */
+  --sky-deep: #1e2a3a;          /* night sea */
+  --sea: #7fa7b2;               /* shoreline water */
+  --sand: #f3ead9;              /* warm sand */
+  --sand-deep: #e8d9bf;         /* wet sand */
   --bg: #ffffff;
-  --bg-gray: #fcfaf8;
-  --bg-dark: #1a1515;
-  --ink: #2c181a;
-  --ink-light: #5c4a4c;
-  --ink-muted: #8b7a7c;
-  --border: #f0ebe8;
-  --cta-custom: #8e1d2c;
+  --bg-gray: #faf8f5;           /* alias to paper */
+  --bg-dots: rgba(17, 24, 39, 0.03);
+  --bg-dark: #0f172a;
+  --glass: rgba(255, 255, 255, 0.7);
+  --ink: #111827;
+  --ink-light: #4b5563;
+  --ink-muted: #9ca3af;
+  --border: #e5e7eb;
+  --border-light: rgba(229, 231, 235, 0.6);
+  --cta-custom: #c13e3e;
 
   /* Layout */
   --container-max: 1280px;
-  --section-pad: 80px;
-  --section-pad-md: 60px;
-  --section-pad-sm: 40px;
+  --section-pad: 120px;
+  --section-pad-md: 80px;
+  --section-pad-sm: 60px;
 
-  /* Components */
-  --radius: 4px;
-  --radius-sm: 2px;
-  --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.08);
-  --shadow-btn: 0 2px 8px rgba(0, 0, 0, 0.15);
+  /* Components - Modern Rounded & Elevated */
+  --radius: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-premium: 
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   /* Fonts */
   --font-serif: "Noto Serif JP", serif;
@@ -31,4 +53,5 @@
 
   /* Transitions */
   --transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }

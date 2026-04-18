@@ -2,82 +2,71 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>会社概要 | 株式会社CIMA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社CIMAの会社概要。愛知県南知多町・篠島を拠点にフリースタイルウエディングをプロデュースしています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/scroll-animation.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="index.html" class="logo">株式会社CIMA</a>
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html">TOP</a></li>
-        <li><a href="service.html">SERVICE</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div data-partial="header"></div>
 
   <main>
-    <section class="sub-hero sec-pad" style="background: var(--bg-gray);">
+    <section class="sub-hero sec-pad">
       <div class="container">
-        <p class="sec-label">ABOUT</p>
-        <h2 class="sec-title">会社概要</h2>
+        <div class="sec-head">
+          <span class="sec-num">CO / 01</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">About</p>
+            <h2 class="sec-title">会社概要</h2>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="sec-pad">
-      <div class="container" style="max-width: 800px;">
-        <div class="card fade-in" style="padding: 40px; overflow-x: auto;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.9375rem;">
-            <tr style="border-bottom: 1px solid var(--border);">
-              <th style="padding: 20px; text-align: left; width: 25%; color: var(--main);">会社名</th>
-              <td style="padding: 20px;">株式会社CIMA（シーマ）</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <th style="padding: 20px; text-align: left; color: var(--main);">所在地</th>
-              <td style="padding: 20px;">〒470-3505 愛知県知多郡南知多町篠島浦磯1-1<br>BBQ Dieux Terrace内</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <th style="padding: 20px; text-align: left; color: var(--main);">設立</th>
-              <td style="padding: 20px;">2016年</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <th style="padding: 20px; text-align: left; color: var(--main);">代表者</th>
-              <td style="padding: 20px;">代表取締役 江頭 尚</td>
-            </tr>
-            <tr>
-              <th style="padding: 20px; text-align: left; color: var(--main);">事業内容</th>
-              <td style="padding: 20px;">
-                ・フリースタイルウエディングの企画・運営<br>
-                ・イベントプロデュース<br>
-                ・バーベキュー施設（BBQ Dieux Terrace）の運営<br>
-                ・地域活性化コンサルティング
-              </td>
-            </tr>
-          </table>
-        </div>
+      <div class="container" style="max-width: 860px;">
+        <table class="info-table fade-in">
+          <tr>
+            <th>会社名</th>
+            <td>株式会社CIMA（シーマ）</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>〒470-3505 愛知県知多郡南知多町篠島浦磯1-1<br>BBQ Dieux Terrace 内</td>
+          </tr>
+          <tr>
+            <th>設立</th>
+            <td>2016年</td>
+          </tr>
+          <tr>
+            <th>代表者</th>
+            <td>代表取締役 江頭 尚</td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>
+              ・フリースタイルウエディングの企画・運営<br>
+              ・イベントプロデュース<br>
+              ・バーベキュー施設（BBQ Dieux Terrace）の運営<br>
+              ・地域活性化コンサルティング
+            </td>
+          </tr>
+          <tr>
+            <th>連絡先</th>
+            <td>TEL: 00-0000-0000<br>Instagram: @egashiratakashi_shinojima</td>
+          </tr>
+        </table>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo">株式会社CIMA</div>
-      <div class="footer-info">
-        <p>〒470-3505 愛知県知多郡南知多町篠島浦磯1-1</p>
-        <p>TEL: 00-0000-0000</p>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <p>© 2026 株式会社CIMA ALL RIGHTS RESERVED.</p>
-    </div>
-  </footer>
-  <div class="floating-cta">
-    <a href="contact.html" class="btn btn-floating">お問い合わせ</a>
-  </div>
-  <script src="js/hamburger.js" defer></script>
-  <script src="js/scroll-animation.js" defer></script>
+  <div data-partial="footer"></div>
+  <div data-partial="floating"></div>
 </body>
 </html>

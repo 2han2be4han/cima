@@ -2,101 +2,116 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>サービス紹介 | 株式会社CIMA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社CIMAが提供する3つのサービス。フリースタイルウエディング、篠島BBQ、地域活性化を軸に、お二人の想いに合わせた一日をプロデュース。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/scroll-animation.js" defer></script>
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="site-header">
-    <a href="index.html" class="logo">株式会社CIMA</a>
-    <div class="nav-toggle" id="navToggle">
-      <span></span><span></span><span></span>
-    </div>
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html">TOP</a></li>
-        <li><a href="service.html">SERVICE</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="greeting.html">GREETING</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="works.html">WORKS</a></li>
-        <li><a href="news.html">NEWS</a></li>
-        <li><a href="voice.html">VOICE</a></li>
-        <li><a href="blog.html">BLOG</a></li>
-        <li><a href="wedding-venues.html">WEDDING VENUES</a></li>
-      </ul>
-      <div class="nav-footer">
-        <a href="#" class="sns-link">Instagram</a>
-        <a href="contact.html" class="btn btn-primary">お問い合わせ</a>
-      </div>
-    </nav>
-  </header>
+  <div data-partial="header"></div>
 
   <main>
-    <section class="sub-hero sec-pad" style="background: var(--bg-gray);">
+    <section class="sub-hero sec-pad">
       <div class="container">
-        <p class="sec-label">SERVICE</p>
-        <h2 class="sec-title">提供サービス</h2>
-      </div>
-    </section>
-
-    <section class="sec-pad">
-      <div class="container">
-        <div class="grid-r" style="grid-template-columns: repeat(2, 1fr); gap: 40px;">
-          <div class="card fade-in" style="padding: 40px;">
-            <div class="service-icon" style="width: 60px; height: 60px; background: var(--main); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; margin-bottom:24px;">01</div>
-            <h3 style="font-size:1.5rem; font-weight:700; margin-bottom:16px;">イベントプロデュース</h3>
-            <p style="color:var(--ink-light);">法人向けのイベント、地域のお祭り、式典など、規模を問わず企画から当日の運営までワンストップでサポート。参加者の心に残る体験を創造します。</p>
-          </div>
-          <div class="card fade-in" style="padding: 40px;">
-            <div class="service-icon" style="width: 60px; height: 60px; background: var(--main); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; margin-bottom:24px;">02</div>
-            <h3 style="font-size:1.5rem; font-weight:700; margin-bottom:16px;">ウェディングコーディネート</h3>
-            <p style="color:var(--ink-light);">お二人の想いに寄り添い、世界に一つだけのウェディングをカタチにします。会場の選定からドレス、装飾、演出まで、トータルでプロデュースいたします。</p>
+        <div class="sec-head">
+          <span class="sec-num">SV / 01</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">Our Services</p>
+            <h2 class="sec-title">提供サービス</h2>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Service 01 -->
+    <section class="sec-pad">
+      <div class="container">
+        <div class="service-detail fade-in">
+          <div class="service-detail-num">01</div>
+          <div class="service-detail-body">
+            <p class="service-detail-tag">Free Style Wedding</p>
+            <h3 class="service-detail-title">自由な発想で叶える、<br>オリジナル・ウエディング</h3>
+            <p class="service-detail-lead">式場の枠にとらわれず、篠島の海・岬・神社・民家を会場にしたオーダーメイドの式を企画します。「この場所でしか成立しない一日」を、お二人のストーリーから逆算して組み立てます。</p>
+            <ul class="service-feat">
+              <li>会場選定 / 試走・ロケハン付き</li>
+              <li>進行・演出の完全オーダーメイド</li>
+              <li>撮影チーム・フローリスト・ケータリングの手配</li>
+              <li>ゲスト輸送プラン（高速船チャーターも対応）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave-divider" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+        <defs><path id="sv-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+        <g>
+          <use xlink:href="#sv-wave" x="48" y="3" fill="rgba(243, 234, 217, 0.4)"/>
+          <use xlink:href="#sv-wave" x="48" y="6" fill="rgba(243, 234, 217, 0.7)"/>
+          <use xlink:href="#sv-wave" x="48" y="9" fill="#faf5ec"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Service 02 -->
+    <section class="sec-pad bg-sand">
+      <div class="container">
+        <div class="service-detail fade-in reverse">
+          <div class="service-detail-num">02</div>
+          <div class="service-detail-body">
+            <p class="service-detail-tag">Shinojima BBQ</p>
+            <h3 class="service-detail-title">海を望むテラスで、<br>ゲストと分かち合う時間</h3>
+            <p class="service-detail-lead">BBQ Dieux Terrace をプラットフォームに、法人の懇親会・式の二次会・少人数ウエディングまで、海風のなかで過ごす「ひらけた」時間をお届けします。</p>
+            <ul class="service-feat">
+              <li>貸切対応 / 最大60名まで</li>
+              <li>フードコーディネート（魚介中心）</li>
+              <li>音響・照明演出</li>
+              <li>宿泊・送迎プランも連携可能</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 03 -->
+    <section class="sec-pad">
+      <div class="container">
+        <div class="service-detail fade-in">
+          <div class="service-detail-num">03</div>
+          <div class="service-detail-body">
+            <p class="service-detail-tag">Region Revival</p>
+            <h3 class="service-detail-title">篠島の魅力を、<br>次の世代へつなぐ</h3>
+            <p class="service-detail-lead">離島・篠島の文化・産業・景観を持続可能な形で発信するための企画をお受けしています。自治体・民間企業双方と連携し、イベント単発ではなく中長期のストーリー設計から関わります。</p>
+            <ul class="service-feat">
+              <li>観光・体験プログラム開発</li>
+              <li>地元事業者との連携ディレクション</li>
+              <li>情報発信・ブランディング</li>
+              <li>持続可能な運営スキームづくり</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="sec-pad final-cta">
+      <div class="container reveal-up">
+        <span class="on-dark-num">CONTACT &mdash; Let's talk</span>
+        <h2 class="cta-title">まずは、ご相談から。</h2>
+        <p class="cta-subtitle">篠島での打ち合わせ、オンライン面談どちらも可能です。</p>
+        <a href="contact.html" class="btn btn-hero-primary btn-pill">お問い合わせはこちら</a>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo">株式会社CIMA</div>
-      <div class="footer-info">
-        <p>〒000-0000 東京都○○区○○ 1-2-3</p>
-        <p>TEL: 00-0000-0000</p>
-      </div>
-      <nav class="footer-nav" style="margin-top: 40px;">
-        <ul style="list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 0.75rem;">
-          <li><a href="index.html">TOP</a></li>
-          <li><a href="service.html">SERVICE</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
-          <li><a href="greeting.html">GREETING</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="works.html">WORKS</a></li>
-          <li><a href="news.html">NEWS</a></li>
-          <li><a href="voice.html">VOICE</a></li>
-          <li><a href="privacy.html">PRIVACY</a></li>
-          <li><a href="terms.html">TERMS</a></li>
-          <li><a href="blog.html">BLOG</a></li>
-          <li><a href="wedding-venues.html">WEDDING VENUES</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="footer-copyright">
-      <p>© 2026 株式会社CIMAALL RIGHT</p>
-    </div>
-  </footer>
-
-  <div class="floating-cta">
-    <a href="contact.html" class="btn btn-floating">お問い合わせ</a>
-  </div>
-
-  <script src="js/hamburger.js" defer></script>
-  <script src="js/scroll-animation.js" defer></script>
+  <div data-partial="footer"></div>
+  <div data-partial="floating"></div>
 </body>
 </html>

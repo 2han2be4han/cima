@@ -4,77 +4,65 @@
   <meta charset="UTF-8">
   <title>お知らせ | 株式会社CIMA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社CIMAからのお知らせ・最新情報。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/scroll-animation.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="index.html" class="logo">株式会社CIMA</a>
-    <div class="nav-toggle"><span></span><span></span><span></span></div>
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html">TOP</a></li>
-        <li><a href="service.html">SERVICE</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="greeting.html">GREETING</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="works.html">WORKS</a></li>
-        <li><a href="news.html">NEWS</a></li>
-        <li><a href="voice.html">VOICE</a></li>
-        <li><a href="blog.html">BLOG</a></li>
-        <li><a href="wedding-venues.html">WEDDING VENUES</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div data-partial="header"></div>
 
   <main>
-    <section class="sub-hero sec-pad" style="background: var(--bg-gray);">
+    <section class="sub-hero sec-pad">
       <div class="container">
-        <p class="sec-label">NEWS</p>
-        <h2 class="sec-title">お知らせ</h2>
+        <div class="sec-head">
+          <span class="sec-num">NW / 01</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">News</p>
+            <h2 class="sec-title">お知らせ</h2>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="sec-pad">
-      <div class="container" style="max-width: 800px;">
-        <div class="card fade-in" style="padding: 24px;">
-          <a href="#" style="display: flex; align-items: center; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--border);">
-            <span style="font-family: monospace; color: var(--ink-muted);">2026.04.16</span>
-            <span style="background: var(--main); color: #fff; padding: 2px 12px; border-radius: 20px; font-size: 0.75rem;">重要</span>
-            <span style="flex: 1;">ホームページをリニューアルしました</span>
+      <div class="container">
+        <div class="post-list fade-in">
+          <a href="#" class="post-item">
+            <span class="post-date">2026.04.16</span>
+            <span class="post-category">重要</span>
+            <span class="post-title">ホームページをリニューアルしました</span>
           </a>
-          <a href="#" style="display: flex; align-items: center; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--border);">
-            <span style="font-family: monospace; color: var(--ink-muted);">2026.04.10</span>
-            <span style="background: var(--main); color: #fff; padding: 2px 12px; border-radius: 20px; font-size: 0.75rem;">イベント</span>
-            <span style="flex: 1;">無料オンラインセミナー開催のお知らせ</span>
+          <a href="#" class="post-item">
+            <span class="post-date">2026.04.10</span>
+            <span class="post-category">イベント</span>
+            <span class="post-title">篠島BBQ サンセットプラン予約受付中</span>
           </a>
-          <a href="#" style="display: flex; align-items: center; gap: 24px; padding: 24px 0;">
-            <span style="font-family: monospace; color: var(--ink-muted);">2026.03.25</span>
-            <span style="background: var(--main); color: #fff; padding: 2px 12px; border-radius: 20px; font-size: 0.75rem;">お知らせ</span>
-            <span style="flex: 1;">ゴールデンウィーク期間の営業について</span>
+          <a href="#" class="post-item">
+            <span class="post-date">2026.03.25</span>
+            <span class="post-category">お知らせ</span>
+            <span class="post-title">ゴールデンウィーク期間の営業について</span>
+          </a>
+          <a href="#" class="post-item">
+            <span class="post-date">2026.03.02</span>
+            <span class="post-category">メディア</span>
+            <span class="post-title">地域情報誌にて、篠島ウエディング特集が掲載されました</span>
+          </a>
+          <a href="#" class="post-item">
+            <span class="post-date">2026.01.15</span>
+            <span class="post-category">イベント</span>
+            <span class="post-title">ブライダルフェア（オンライン相談会）開催のご案内</span>
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo">株式会社CIMA</div>
-      <div class="footer-info">
-        <p>〒470-3505 愛知県知多郡南知多町篠島浦磯1-1</p>
-        <p>TEL: 00-0000-0000</p>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <p>© 2026 株式会社CIMA ALL RIGHTS RESERVED.</p>
-    </div>
-  </footer>
-
-  <div class="floating-cta">
-    <a href="contact.html" class="btn btn-floating">お問い合わせ</a>
-  </div>
-
-  <script src="js/hamburger.js" defer></script>
-  <script src="js/scroll-animation.js" defer></script>
+  <div data-partial="footer"></div>
+  <div data-partial="floating"></div>
 </body>
 </html>

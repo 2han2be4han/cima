@@ -4,67 +4,87 @@
   <meta charset="UTF-8">
   <title>お客様の声 | 株式会社CIMA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社CIMAでフリースタイルウエディング・イベントを実施されたお客様の声。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/scroll-animation.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="index.html" class="logo">株式会社CIMA</a>
-    <div class="nav-toggle"><span></span><span></span><span></span></div>
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html">TOP</a></li>
-        <li><a href="service.html">SERVICE</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="greeting.html">GREETING</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="works.html">WORKS</a></li>
-        <li><a href="news.html">NEWS</a></li>
-        <li><a href="voice.html">VOICE</a></li>
-        <li><a href="blog.html">BLOG</a></li>
-        <li><a href="wedding-venues.html">WEDDING VENUES</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div data-partial="header"></div>
 
   <main>
-    <section class="sub-hero sec-pad" style="background: var(--bg-gray);">
+    <section class="sub-hero sec-pad">
       <div class="container">
-        <p class="sec-label">VOICE</p>
-        <h2 class="sec-title">お客様の声</h2>
+        <div class="sec-head">
+          <span class="sec-num">VC / 01</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">Customer Voice</p>
+            <h2 class="sec-title">お客様の声</h2>
+            <p class="sub-hero-lead">式を終えた後、お客様からいただいたお手紙・メッセージの一部を、ご本人の許可のもと掲載しています。</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="sec-pad">
+    <section class="sec-pad bg-sand">
       <div class="container">
-        <div class="grid-r" style="grid-template-columns: repeat(3, 1fr); gap: 32px;">
-          <div class="card fade-in" style="padding: 32px;">
-            <p style="margin-bottom: 24px;">親身になって対応してくださり、安心してお任せできました。理想以上のイベントになりました。</p>
-            <div style="display: flex; align-items: center; gap: 16px;">
-              <div style="width: 48px; border-radius: 50%; aspect-ratio: 1/1; background: var(--border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--main);">T</div>
+        <div class="voice-grid">
+          <div class="voice-card reveal-up">
+            <p class="voice-quote">自分たちらしい一日を、心から楽しめる形で実現してくれました。既存の結婚式では味わえない時間でした。海風の中、ゲストみんなが本当にリラックスしていて、それが何より嬉しかった。</p>
+            <div class="voice-meta">
               <div>
-                <p style="font-weight: 700;">T.S 様</p>
-                <p style="font-size: 0.75rem; color: var(--ink-muted);">40代・経営者</p>
+                <div class="voice-name">H 様ご夫妻</div>
               </div>
+              <div class="voice-role">Free Style Wedding</div>
             </div>
           </div>
-          <div class="card fade-in" style="padding: 32px;">
-            <p style="margin-bottom: 24px;">初めての依頼で不安でしたが、丁寧な説明のおかげでスムーズに進みました。</p>
-            <div style="display: flex; align-items: center; gap: 16px;">
-              <div style="width: 48px; border-radius: 50%; aspect-ratio: 1/1; background: var(--border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--main);">M</div>
+          <div class="voice-card reveal-up">
+            <p class="voice-quote">篠島の海を望むBBQ会場での結婚式。ゲストからも「こんな式は初めて」と大好評でした。事前の試走プランから当日まで、代表が最後まで伴走してくれた安心感がすごかったです。</p>
+            <div class="voice-meta">
               <div>
-                <p style="font-weight: 700;">M.K 様</p>
-                <p style="font-size: 0.75rem; color: var(--ink-muted);">30代・個人事業主</p>
+                <div class="voice-name">M 様ご夫妻</div>
               </div>
+              <div class="voice-role">Shinojima Wedding</div>
             </div>
           </div>
-          <div class="card fade-in" style="padding: 32px;">
-            <p style="margin-bottom: 24px;">対応が迅速で、こちらの要望をしっかり汲み取ってくれました。またお願いしたいです。</p>
-            <div style="display: flex; align-items: center; gap: 16px;">
-              <div style="width: 48px; border-radius: 50%; aspect-ratio: 1/1; background: var(--border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--main);">A</div>
+          <div class="voice-card reveal-up">
+            <p class="voice-quote">企業の周年イベントでお世話になりました。ただの宴会ではなく、篠島でしかできない一泊二日のプログラムを組んでいただき、参加者全員の記憶に残る時間になりました。</p>
+            <div class="voice-meta">
               <div>
-                <p style="font-weight: 700;">A.Y 様</p>
-                <p style="font-size: 0.75rem; color: var(--ink-muted);">50代・会社員</p>
+                <div class="voice-name">K 様（事業会社）</div>
               </div>
+              <div class="voice-role">Corporate Event</div>
+            </div>
+          </div>
+          <div class="voice-card reveal-up">
+            <p class="voice-quote">一度きりの式だから、妥協したくなかった。会場探しから衣装、ゲスト動線まで、一つずつ丁寧に相談に乗っていただき、文字通りゼロから組み立ててもらえました。</p>
+            <div class="voice-meta">
+              <div>
+                <div class="voice-name">T 様ご夫妻</div>
+              </div>
+              <div class="voice-role">Shrine Ceremony</div>
+            </div>
+          </div>
+          <div class="voice-card reveal-up">
+            <p class="voice-quote">式の数ヶ月前から、何度も島に足を運んで相談させてもらいました。その度に島の人たちを紹介してもらえて、結婚式が「自分たちだけの式」ではなく「島に迎え入れられた式」になりました。</p>
+            <div class="voice-meta">
+              <div>
+                <div class="voice-name">S 様ご夫妻</div>
+              </div>
+              <div class="voice-role">Sunrise Ceremony</div>
+            </div>
+          </div>
+          <div class="voice-card reveal-up">
+            <p class="voice-quote">小規模な家族式をお願いしました。派手な演出はなくても、島の自然と時間そのものが最高の演出になってくれた。両親もとても喜んでくれました。</p>
+            <div class="voice-meta">
+              <div>
+                <div class="voice-name">N 様ご夫妻</div>
+              </div>
+              <div class="voice-role">Family Wedding</div>
             </div>
           </div>
         </div>
@@ -72,22 +92,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo">株式会社CIMA</div>
-      <div class="footer-info">
-        <p>〒470-3505 愛知県知多郡南知多町篠島浦磯1-1</p>
-        <p>TEL: 00-0000-0000</p>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <p>© 2026 株式会社CIMA ALL RIGHTS RESERVED.</p>
-    </div>
-  </footer>
-  <div class="floating-cta">
-    <a href="contact.html" class="btn btn-floating">お問い合わせ</a>
-  </div>
-  <script src="js/hamburger.js" defer></script>
-  <script src="js/scroll-animation.js" defer></script>
+  <div data-partial="footer"></div>
+  <div data-partial="floating"></div>
 </body>
 </html>

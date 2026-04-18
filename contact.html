@@ -2,178 +2,100 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>お問い合わせ | 株式会社CIMA</title>
-  <meta name="description" content="株式会社CIMAへのお問い合わせ・資料請求はこちら。イベント企画やウェディングのご相談を承ります。">
-  
-  <!-- Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社CIMAへのお問い合わせ・資料請求はこちら。フリースタイルウエディング、篠島でのイベントのご相談を承ります。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/form-tabs.js" defer></script>
+  <script src="js/scroll-animation.js" defer></script>
 </head>
-<body class="sub-page">
-
-  <!-- Header -->
-  <header class="site-header">
-    <a href="index.html" class="logo">株式会社CIMA</a>
-    <div class="nav-toggle" id="navToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav class="nav-menu" id="navMenu">
-      <ul>
-        <li><a href="index.html">TOP</a></li>
-        <li><a href="service.html">SERVICE</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="greeting.html">GREETING</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="works.html">WORKS</a></li>
-        <li><a href="news.html">NEWS</a></li>
-        <li><a href="voice.html">VOICE</a></li>
-        <li><a href="blog.html">BLOG</a></li>
-        <li><a href="wedding-venues.html">WEDDING VENUES</a></li>
-      </ul>
-      <div class="nav-footer">
-        <a href="https://instagram.com" target="_blank" class="sns-link">Instagram</a>
-        <a href="contact.html" class="btn btn-primary">お問い合わせ</a>
-      </div>
-    </nav>
-  </header>
+<body>
+  <div data-partial="header"></div>
 
   <main>
-    <section class="sub-hero sec-pad" style="background: var(--bg-gray);">
+    <section class="sub-hero sec-pad">
       <div class="container">
-        <p class="sec-label">CONTACT</p>
-        <h2 class="sec-title">お問い合わせ</h2>
+        <div class="sec-head">
+          <span class="sec-num">CT / 01</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">Contact</p>
+            <h2 class="sec-title">お問い合わせ</h2>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="sec-pad">
-      <div class="container" style="max-width: 640px;">
-        <p style="text-align: center; color: var(--ink-light); margin-bottom: 40px;">
-          各種お問い合わせ、資料請求は以下のフォームより承っております。<br>
-          必要事項をご入力の上、送信してください。
+      <div class="container form-wrap">
+        <p class="form-intro">
+          フリースタイルウエディング、篠島BBQ、地域連携のご相談など、<br>
+          以下のフォームよりお気軽にお問い合わせください。
         </p>
 
-        <!-- Form Tabs -->
-        <div class="form-tabs" style="display: flex; gap: 8px; margin-bottom: 32px; background: var(--border); padding: 4px; border-radius: var(--radius-sm);">
-          <button class="form-tab active" data-type="inquiry" style="flex: 1; padding: 12px; border: none; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer; background: transparent; transition: all 0.3s;">お問い合わせ</button>
-          <button class="form-tab" data-type="document" style="flex: 1; padding: 12px; border: none; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer; background: transparent; transition: all 0.3s;">資料請求</button>
+        <div class="form-tabs">
+          <button class="form-tab active" data-type="inquiry">お問い合わせ</button>
+          <button class="form-tab" data-type="document">資料請求</button>
         </div>
 
-        <style>
-          .form-tab.active { background: #fff; box-shadow: var(--shadow); }
-          .form-panel { display: none; }
-          .form-panel.active { display: block; }
-          .form-group { margin-bottom: 24px; }
-          .form-group label { display: block; font-size: 0.875rem; font-weight: 700; margin-bottom: 8px; }
-          .form-group label span { color: var(--main); margin-left: 4px; }
-          .form-control { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; }
-          .form-control:focus { outline: none; border-color: var(--main); }
-        </style>
-
-        <form action="#" method="POST" class="card" style="padding: 40px;">
-          <!-- Inquiry Panel -->
+        <form action="#" method="POST" class="form-card">
           <div id="inquiry-panel" class="form-panel active">
-            <div class="form-group">
-              <label>お問い合わせ種別<span>*</span></label>
-              <select class="form-control" name="type">
+            <div class="form-field">
+              <label class="form-label" for="type">お問い合わせ種別<span class="req">*</span></label>
+              <select id="type" class="form-select" name="type">
                 <option value="general">一般のお問い合わせ</option>
-                <option value="service">サービスについて</option>
-                <option value="wedding">ウェディングについて</option>
-                <option value="event">イベントについて</option>
+                <option value="wedding">ウエディングについて</option>
+                <option value="event">イベント / BBQ について</option>
+                <option value="region">地域連携 / プロデュース</option>
                 <option value="other">その他</option>
               </select>
             </div>
           </div>
 
-          <!-- Document Panel -->
           <div id="document-panel" class="form-panel">
-            <div class="form-group">
-              <label>資料請求の内容<span>*</span></label>
-              <select class="form-control" name="document_type">
-                <option value="company">会社案内資料</option>
-                <option value="wedding">ウェディングプラン資料</option>
-                <option value="event">イベント実績資料</option>
+            <div class="form-field">
+              <label class="form-label" for="document_type">資料請求の内容<span class="req">*</span></label>
+              <select id="document_type" class="form-select" name="document_type">
+                <option value="company">会社案内</option>
+                <option value="wedding">ウエディングプラン資料</option>
+                <option value="venue">ロケーション・会場資料</option>
               </select>
             </div>
           </div>
 
-          <!-- Common Fields -->
-          <div class="form-group">
-            <label>会社名</label>
-            <input type="text" class="form-control" name="company" placeholder="株式会社CIMA">
+          <div class="form-field">
+            <label class="form-label" for="company">会社名</label>
+            <input id="company" type="text" class="form-input" name="company" placeholder="株式会社 ○○">
           </div>
-          <div class="form-group">
-            <label>お名前<span>*</span></label>
-            <input type="text" class="form-control" name="name" placeholder="山田 太郎" required>
+          <div class="form-field">
+            <label class="form-label" for="name">お名前<span class="req">*</span></label>
+            <input id="name" type="text" class="form-input" name="name" placeholder="山田 太郎" required>
           </div>
-          <div class="form-group">
-            <label>メールアドレス<span>*</span></label>
-            <input type="email" class="form-control" name="email" placeholder="example@cima.jp" required>
+          <div class="form-field">
+            <label class="form-label" for="email">メールアドレス<span class="req">*</span></label>
+            <input id="email" type="email" class="form-input" name="email" placeholder="example@cima.jp" required>
           </div>
-          <div class="form-group">
-            <label>電話番号</label>
-            <input type="tel" class="form-control" name="phone" placeholder="00-0000-0000">
+          <div class="form-field">
+            <label class="form-label" for="phone">電話番号</label>
+            <input id="phone" type="tel" class="form-input" name="phone" placeholder="090-0000-0000">
           </div>
-          <div class="form-group">
-            <label>お問い合わせ内容<span>*</span></label>
-            <textarea class="form-control" name="message" rows="6" placeholder="ご質問やご相談内容をご記入ください" required></textarea>
+          <div class="form-field">
+            <label class="form-label" for="message">お問い合わせ内容<span class="req">*</span></label>
+            <textarea id="message" class="form-textarea" name="message" placeholder="ご希望の日程・人数・雰囲気など、ざっくりで構いません。" required></textarea>
           </div>
 
-          <div style="text-align: center; margin-top: 40px;">
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">内容を確認して送信する</button>
-          </div>
+          <button type="submit" class="btn btn-primary form-submit">内容を確認して送信する</button>
+          <p class="form-note">* 必須項目　／　ご記入いただいた情報は <a href="privacy.html">プライバシーポリシー</a> に基づき厳重に管理します。</p>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo">株式会社CIMA</div>
-      <div class="footer-info">
-        <p>〒000-0000 東京都○○区○○ 1-2-3</p>
-        <p>TEL: 00-0000-0000</p>
-      </div>
-      <div class="footer-sns" style="margin-top: 24px;">
-        <a href="#" target="_blank" style="color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 8px 24px; border-radius: 20px; font-size: 0.875rem;">Instagram</a>
-      </div>
-      <nav class="footer-nav" style="margin-top: 40px;">
-        <ul style="list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 0.75rem;">
-          <li><a href="index.html">TOP</a></li>
-          <li><a href="service.html">SERVICE</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
-          <li><a href="greeting.html">GREETING</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="works.html">WORKS</a></li>
-          <li><a href="news.html">NEWS</a></li>
-          <li><a href="voice.html">VOICE</a></li>
-          <li><a href="privacy.html">PRIVACY</a></li>
-          <li><a href="terms.html">TERMS</a></li>
-          <li><a href="blog.html">BLOG</a></li>
-          <li><a href="wedding-venues.html">WEDDING VENUES</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="footer-copyright">
-      <p>© 2026 株式会社CIMAALL RIGHT</p>
-    </div>
-  </footer>
-
-  <!-- Floating CTA -->
-  <div class="floating-cta">
-    <a href="contact.html" class="btn btn-floating">お問い合わせ</a>
-  </div>
-
-  <!-- JS -->
-  <script src="js/hamburger.js" defer></script>
-  <script src="js/form-tabs.js" defer></script>
-  <script src="js/scroll-animation.js" defer></script>
+  <div data-partial="footer"></div>
+  <div data-partial="floating"></div>
 </body>
 </html>

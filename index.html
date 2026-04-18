@@ -21,7 +21,8 @@
   <meta property="og:url" content="https://cima-wedding.jp/">
   <meta property="og:site_name" content="株式会社CIMA">
   <meta property="og:image" content="images/common/ogp.jpg">
-  <!-- JS -->
+  <!-- JS (layout.js must load first to inject partials before hamburger.js) -->
+  <script src="js/layout.js" defer></script>
   <script src="js/entrance-animation.js" defer></script>
   <script src="js/hamburger.js" defer></script>
   <script src="js/parallax.js" defer></script>
@@ -30,222 +31,384 @@
 </head>
 <body>
 
-  <!-- Curtain Overlay -->
+  <!-- Curtain Overlay (Shinojima sunset) -->
   <div class="curtain-overlay">
     <div class="curtain-logo">株式会社CIMA</div>
+
+    <div class="curtain-waves" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+        <defs>
+          <path id="curtain-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g>
+          <use xlink:href="#curtain-wave" x="48" y="0" fill="rgba(40, 25, 20, 0.4)" />
+          <use xlink:href="#curtain-wave" x="48" y="4" fill="rgba(25, 15, 12, 0.65)" />
+          <use xlink:href="#curtain-wave" x="48" y="8" fill="rgba(10, 8, 12, 0.95)" />
+        </g>
+      </svg>
+    </div>
   </div>
 
-  <!-- Header -->
-  <header class="site-header">
-    <a href="index.html" class="logo">株式会社CIMA</a>
-    <div class="nav-toggle" id="navToggle">
-      <span></span><span></span><span></span>
-    </div>
-    <nav class="nav-menu" id="navMenu">
-      <ul>
-        <li><a href="index.html">TOP</a></li>
-        <li><a href="service.html">SERVICE</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="greeting.html">GREETING</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="wedding-venues.html">LOCATIONS</a></li>
-      </ul>
-      <div class="nav-footer">
-        <a href="https://www.instagram.com/egashiratakashi_shinojima" target="_blank" class="sns-link">Instagram</a>
-        <a href="contact.html" class="btn btn-primary">お問い合わせ</a>
-      </div>
-    </nav>
-  </header>
+  <div data-partial="header"></div>
 
   <main>
     <!-- Hero Section -->
-    <section class="hero-section parallax" data-speed="0.8" style="background-image: url('images/hero/hero-shinojima.jpg');">
-      <div class="hero-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));"></div>
+    <section class="hero-section parallax" data-speed="0.3">
+      <div class="hero-overlay"></div>
       <div class="container hero-inner">
-        <div class="fade-in">
-          <p class="sec-label" style="color: rgba(255,255,255,0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.3);">FREE STYLE WEDDING & SHINOJIMA SERVICE</p>
-          <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 32px; letter-spacing: 0.05em;">自由を求める<br>ウエディング。</h1>
-          <p class="hero-desc" style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 48px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); font-weight: 300; opacity: 0.95;">特定の式場という「枠」にとらわれず、<br>お二人が心から望む場所で、最高の瞬間をプロデュースします。</p>
-          <div class="hero-btns" style="display: flex; gap: 20px; justify-content: center;">
-            <a href="contact.html" class="btn btn-primary" style="padding: 18px 48px;">無料相談はこちら</a>
-            <a href="service.html" class="btn btn-hero-secondary" style="padding: 18px 48px;">コンセプトを見る</a>
+        <div class="hero-content">
+          <p class="sec-label hero-label reveal-up">Free Style Wedding & Shinojima Service</p>
+          <h1 class="hero-title text-reveal"><span>自由を求める<br>ウエディング。</span></h1>
+          <p class="hero-desc reveal-up">特定の式場という「枠」にとらわれず、<br>お二人が心から望む場所で、最高の瞬間をプロデュースします。</p>
+          <div class="hero-btns reveal-up">
+            <a href="contact.html" class="btn btn-primary">無料相談はこちら</a>
+            <a href="service.html" class="btn btn-hero-secondary">コンセプトを見る</a>
           </div>
         </div>
       </div>
-      <div class="divider">
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+
+      <!-- Hero-integrated waves — realistic multi-layer sea -->
+      <div class="hero-waves" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none">
           <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            <filter id="wave-blur-far"><feGaussianBlur stdDeviation="1.2"/></filter>
+            <filter id="wave-blur-mid"><feGaussianBlur stdDeviation="0.5"/></filter>
           </defs>
-          <g class="parallax-waves">
-            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(248,250,252,0.7" />
-            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(248,250,252,0.5)" />
-            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(248,250,252,0.3)" />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="#f8fafc" />
+
+          <!-- Far horizon haze -->
+          <path class="wave-layer layer-far"
+            d="M-200 60 Q80 48 360 62 T800 56 T1200 64 T1640 56 L1640 200 L-200 200 Z"
+            fill="rgba(30, 42, 58, 0.5)"
+            filter="url(#wave-blur-far)"/>
+
+          <!-- Mid-back swells (asymmetric) -->
+          <path class="wave-layer layer-mid-back"
+            d="M-200 82 C-40 68 120 96 280 78 C440 60 600 98 760 78 C920 58 1080 100 1240 80 C1400 62 1560 92 1640 80 L1640 200 L-200 200 Z"
+            fill="rgba(90, 125, 140, 0.55)"
+            filter="url(#wave-blur-mid)"/>
+          <!-- Foam ridge on mid-back -->
+          <path class="wave-layer layer-mid-back-foam"
+            d="M-200 82 C-40 68 120 96 280 78 C440 60 600 98 760 78 C920 58 1080 100 1240 80 C1400 62 1560 92 1640 80"
+            fill="none" stroke="rgba(255, 255, 255, 0.25)" stroke-width="0.9"/>
+
+          <!-- Mid-front choppy waves -->
+          <path class="wave-layer layer-mid-front"
+            d="M-200 108 C-80 88 40 122 160 100 C280 78 400 118 520 96 C640 74 760 120 880 98 C1000 76 1120 122 1240 100 C1360 78 1480 118 1640 100 L1640 200 L-200 200 Z"
+            fill="rgba(155, 185, 195, 0.65)"/>
+          <!-- Foam ridge on mid-front -->
+          <path class="wave-layer layer-mid-front-foam"
+            d="M-200 108 C-80 88 40 122 160 100 C280 78 400 118 520 96 C640 74 760 120 880 98 C1000 76 1120 122 1240 100 C1360 78 1480 118 1640 100"
+            fill="none" stroke="rgba(255, 255, 255, 0.45)" stroke-width="0.8"/>
+
+          <!-- Front crashing waves (irregular, with deeper troughs) -->
+          <path class="wave-layer layer-front-back"
+            d="M-200 138 C-60 116 80 150 240 126 C400 102 560 148 720 122 C880 96 1040 152 1200 126 C1360 100 1520 148 1640 130 L1640 200 L-200 200 Z"
+            fill="rgba(210, 225, 230, 0.85)"/>
+          <!-- Foam spray on front -->
+          <path class="wave-layer layer-front-back-foam"
+            d="M-200 138 C-60 116 80 150 240 126 C400 102 560 148 720 122 C880 96 1040 152 1200 126 C1360 100 1520 148 1640 130"
+            fill="none" stroke="rgba(255, 255, 255, 0.7)" stroke-width="1"/>
+
+          <!-- Shore wash (smooth, reaches bottom) -->
+          <path class="wave-layer layer-shore"
+            d="M-200 166 Q120 148 440 164 Q760 180 1080 160 Q1400 140 1640 158 L1640 200 L-200 200 Z"
+            fill="#f4f9fb"/>
+
+          <!-- Small surface ripples (detail) -->
+          <g class="wave-layer layer-ripples" stroke="rgba(255,255,255,0.18)" stroke-width="0.5" fill="none">
+            <path d="M60 120 Q100 116 140 120 T220 120"/>
+            <path d="M320 92 Q360 88 400 92 T480 92"/>
+            <path d="M560 128 Q600 124 640 128 T720 128"/>
+            <path d="M800 104 Q840 100 880 104 T960 104"/>
+            <path d="M1040 132 Q1080 128 1120 132 T1200 132"/>
+            <path d="M1280 96 Q1320 92 1360 96 T1440 96"/>
           </g>
         </svg>
       </div>
     </section>
 
-    <!-- Representative Info / Introduction -->
-    <section class="sec-pad" style="background-color: var(--bg-gray);">
-      <div class="container" style="max-width: 1000px;">
-        <div class="grid-r" style="grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-          <div class="fade-in">
-            <div style="position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-hover);">
-               <div style="aspect-ratio: 4/5; background: var(--border); display: flex; align-items: center; justify-content: center; color: var(--ink-muted);">篠島での一枚</div>
+    <!-- Reasons Section -->
+    <section id="reasons" class="sec-pad bg-sky has-pines">
+      <div class="pine-silhouette right-edge" aria-hidden="true">
+        <svg viewBox="0 0 440 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMax meet">
+          <g fill="#1a2a1f">
+            <!-- Rock base -->
+            <path d="M60 520 L60 470 C90 458 120 450 155 448 C190 440 225 438 260 440 C295 438 330 445 360 455 C390 462 415 475 440 490 L440 520 Z"/>
+            <!-- Pine trees -->
+            <path d="M130 470 L132 360 L134 470 Z M118 440 L125 395 L132 420 L140 400 L148 445 Z M125 400 L130 360 L135 400 Z M120 410 L132 355 L144 415 Z"/>
+            <path d="M175 465 L177 340 L179 465 Z M160 440 L170 380 L180 405 L190 385 L200 450 Z M170 395 L177 335 L184 395 Z M165 410 L178 330 L191 410 Z"/>
+            <path d="M220 470 L222 330 L224 470 Z M205 435 L215 375 L225 395 L235 378 L245 445 Z M215 380 L222 325 L230 380 Z M210 400 L225 320 L240 400 Z"/>
+            <path d="M265 470 L267 350 L269 470 Z M250 435 L260 390 L270 412 L280 392 L290 445 Z M258 395 L266 345 L274 395 Z M253 410 L267 340 L281 410 Z"/>
+            <path d="M310 470 L312 360 L314 470 Z M295 445 L305 400 L315 420 L325 402 L335 450 Z M303 405 L312 355 L321 405 Z"/>
+            <path d="M355 475 L357 375 L359 475 Z M342 450 L350 408 L358 428 L366 410 L378 452 Z M348 412 L356 370 L364 412 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="pine-silhouette left-edge" aria-hidden="true">
+        <svg viewBox="0 0 280 360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMax meet">
+          <g fill="#1a2a1f">
+            <path d="M0 360 L0 320 C20 316 40 312 65 314 C90 310 115 312 135 316 C150 318 160 322 170 326 L170 360 Z"/>
+            <path d="M50 328 L52 240 L54 328 Z M38 302 L47 260 L56 280 L65 262 L74 305 Z M45 268 L52 235 L59 268 Z"/>
+            <path d="M95 330 L97 215 L99 330 Z M80 298 L90 248 L100 268 L110 250 L120 306 Z M87 252 L96 210 L105 252 Z"/>
+            <path d="M140 332 L142 245 L144 332 Z M128 306 L137 265 L146 285 L155 267 L164 310 Z M135 272 L142 240 L149 272 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="sec-head reveal-up">
+          <span class="sec-num">01 / 07</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">Why Choose Us</p>
+            <h2 class="sec-title">選ばれる理由</h2>
+          </div>
+        </div>
+        <div class="reasons-grid">
+          <div class="reason-card reveal-up stagger-item">
+            <div class="reason-number">01</div>
+            <div class="reason-body">
+              <h3 class="reason-title">自由な発想でオーダーメイド</h3>
+              <p class="reason-desc">式場の枠にとらわれず、お二人のストーリーに合わせて会場・進行・演出を一から組み立てます。定型のパッケージに当てはめず、"その日しか成立しない一日"をつくる。</p>
             </div>
           </div>
-          <div class="fade-in">
-            <p class="sec-label" style="text-align: left;">REPRESENTATIVE</p>
-            <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 24px;">代表 江頭 尚<br><span style="font-size: 1rem; color: var(--ink-light); font-weight: 400;">Takashi Egashira</span></h2>
-            <p style="margin-bottom: 20px;">2016年に株式会社CIMAを設立。現在は愛知県・篠島を拠点に、ウエディングプロデュース、BBQ施設の運営、地域活性化など多岐にわたる活動を展開しています。</p>
-            <p style="margin-bottom: 32px;">「自由を求めるウエディング」をコンセプトに、お二人の想いに最もふさわしい場所選びからトータルでサポートいたします。</p>
-            <a href="greeting.html" class="btn btn-hero-secondary" style="border-color: var(--main); color: var(--main);">代表あいさつを読む</a>
+          <div class="reason-card reveal-up stagger-item">
+            <div class="reason-number">02</div>
+            <div class="reason-body">
+              <h3 class="reason-title">篠島ならではのロケーション</h3>
+              <p class="reason-desc">海と夕景が広がる離島・篠島を拠点に、この場所でしか叶わない一日をプロデュース。都市の式場では得られない、自然と時間の流れを味方に。</p>
+            </div>
+          </div>
+          <div class="reason-card reveal-up stagger-item">
+            <div class="reason-number">03</div>
+            <div class="reason-body">
+              <h3 class="reason-title">代表が最後まで伴走</h3>
+              <p class="reason-desc">初回ご相談から当日まで、代表・江頭尚が一貫してサポート。担当者の引き継ぎやマニュアル化された応対ではなく、細部まで対話を重ねた体験を。</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Curve Divider -->
-    <div class="section-divider fade-in">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" fill="#fff"></path>
+    <!-- Wave Divider: Reasons → Service (white) -->
+    <div class="wave-divider flip" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path-3" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g>
+          <use xlink:href="#wave-path-3" x="48" y="3" fill="rgba(238, 244, 246, 0.4)" />
+          <use xlink:href="#wave-path-3" x="48" y="6" fill="rgba(238, 244, 246, 0.7)" />
+          <use xlink:href="#wave-path-3" x="48" y="9" fill="#ffffff" />
+        </g>
       </svg>
     </div>
 
     <!-- Service Section -->
-    <section id="service" class="sec-pad">
+    <section id="service" class="sec-pad has-pines">
+      <div class="pine-silhouette pine-service-bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+          <g fill="#1a2a1f">
+            <path d="M0 120 L0 100 C60 96 120 95 180 96 C240 93 300 95 360 100 C420 97 480 96 540 100 C600 94 660 92 720 96 C780 92 840 90 900 94 C960 91 1020 92 1080 96 C1140 94 1200 93 1260 97 C1320 95 1380 96 1440 100 L1440 120 Z"/>
+            <path d="M60 108 L62 70 L64 108 Z M50 95 L58 78 L66 92 L74 78 L82 98 Z"/>
+            <path d="M160 108 L162 60 L164 108 Z M148 92 L158 72 L168 86 L178 70 L188 94 Z"/>
+            <path d="M270 108 L272 65 L274 108 Z M258 90 L268 74 L278 88 L288 72 L298 94 Z"/>
+            <path d="M380 108 L382 58 L384 108 Z M368 88 L378 68 L388 84 L398 66 L408 92 Z"/>
+            <path d="M490 108 L492 62 L494 108 Z M478 90 L488 72 L498 86 L508 70 L518 94 Z"/>
+            <path d="M600 108 L602 55 L604 108 Z M588 86 L598 66 L608 82 L618 64 L628 90 Z"/>
+            <path d="M710 108 L712 62 L714 108 Z M698 90 L708 72 L718 86 L728 70 L738 94 Z"/>
+            <path d="M820 108 L822 58 L824 108 Z M808 88 L818 68 L828 84 L838 66 L848 92 Z"/>
+            <path d="M930 108 L932 65 L934 108 Z M918 92 L928 74 L938 88 L948 72 L958 94 Z"/>
+            <path d="M1040 108 L1042 60 L1044 108 Z M1028 90 L1038 70 L1048 86 L1058 68 L1068 92 Z"/>
+            <path d="M1150 108 L1152 68 L1154 108 Z M1138 94 L1148 76 L1158 90 L1168 74 L1178 96 Z"/>
+            <path d="M1260 108 L1262 58 L1264 108 Z M1248 88 L1258 68 L1268 84 L1278 66 L1288 92 Z"/>
+            <path d="M1370 108 L1372 65 L1374 108 Z M1358 92 L1368 74 L1378 88 L1388 72 L1398 94 Z"/>
+          </g>
+        </svg>
+      </div>
       <div class="container">
-        <p class="sec-label">OUR SERVICES</p>
-        <h2 class="sec-title">提供サービス</h2>
-        <div class="grid-r" style="grid-template-columns: repeat(3, 1fr); gap: 32px;">
-          <div class="card fade-in">
+        <div class="sec-head reveal-up">
+          <span class="sec-num">02 / 07</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">Our Services</p>
+            <h2 class="sec-title">提供サービス</h2>
+          </div>
+        </div>
+        <div class="service-grid">
+          <div class="card reveal-up stagger-item">
             <div class="card-image-box">
               <img src="images/services/wedding.png" alt="FREE STYLE WEDDING">
               <div class="card-number">01</div>
             </div>
-            <div style="padding: 32px; text-align: center;">
-              <h3 style="margin-bottom: 16px;">FREE STYLE WEDDING</h3>
-              <p style="font-size: 0.875rem; color: var(--ink-light);">決まった場所、決まった進行ではなく、お二人のストーリーに合わせた「自由な式」を企画します。</p>
+            <div class="card-content">
+              <h3 class="card-title">Free Style Wedding</h3>
+              <p class="card-desc">決まった場所、決まった進行ではなく、お二人のストーリーに合わせた「自由な式」を企画します。</p>
             </div>
           </div>
-          <div class="card fade-in">
+          <div class="card reveal-up stagger-item">
             <div class="card-image-box">
               <img src="images/services/bbq.png" alt="SHINOJIMA BBQ">
               <div class="card-number">02</div>
             </div>
-            <div style="padding: 32px; text-align: center;">
-              <h3 style="margin-bottom: 16px;">SHINOJIMA BBQ</h3>
-              <p style="font-size: 0.875rem; color: var(--ink-light);">篠島の海を望むBBQ Dieux Terraceでのイベント。観光、レジャー、懇親会をトータルサポート。</p>
+            <div class="card-content">
+              <h3 class="card-title">Shinojima BBQ</h3>
+              <p class="card-desc">篠島の海を望むBBQ Dieux Terraceでのイベント。観光、レジャー、懇親会をトータルサポート。</p>
             </div>
           </div>
-          <div class="card fade-in">
+          <div class="card reveal-up stagger-item">
             <div class="card-image-box">
               <img src="images/services/revival.png" alt="REGION REVIVAL">
               <div class="card-number">03</div>
             </div>
-            <div style="padding: 32px; text-align: center;">
-              <h3 style="margin-bottom: 16px;">REGION REVIVAL</h3>
-              <p style="font-size: 0.875rem; color: var(--ink-light);">離島・篠島の魅力を世界に発信。持続可能な地域づくりを目指したイベント企画を行っています。</p>
+            <div class="card-content">
+              <h3 class="card-title">Region Revival</h3>
+              <p class="card-desc">離島・篠島の魅力を世界に発信。持続可能な地域づくりを目指したイベント企画を行っています。</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Tilt Divider -->
-    <div class="section-divider fade-in">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path d="M0,100 L1440,0 L1440,100 L0,100 Z" fill="#f8fafc"></path>
+    <!-- Wave Divider: Service → Voice (sand) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path-2" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g>
+          <use xlink:href="#wave-path-2" x="48" y="3" fill="rgba(243, 234, 217, 0.3)" />
+          <use xlink:href="#wave-path-2" x="48" y="6" fill="rgba(243, 234, 217, 0.6)" />
+          <use xlink:href="#wave-path-2" x="48" y="9" fill="#faf5ec" />
+        </g>
       </svg>
     </div>
 
-    <!-- CMS Content: NEWS (Will be dynamic later) -->
-    <section id="news" class="sec-pad" style="background-color: var(--bg-gray);">
-      <div class="container" style="max-width: 800px;">
-        <p class="sec-label">NEWS</p>
-        <h2 class="sec-title">お知らせ</h2>
-        <div id="news-list" class="fade-in">
-          <!-- CMS data will be injected here -->
-          <div style="text-align: center; padding: 40px; color: var(--ink-muted);">読み込み中...</div>
+    <!-- Voice Section -->
+    <section id="voice" class="sec-pad bg-sand">
+      <div class="container">
+        <div class="sec-head reveal-up">
+          <span class="sec-num">03 / 07</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">Customer Voice</p>
+            <h2 class="sec-title">お客様の声</h2>
+          </div>
+        </div>
+        <div class="voice-grid">
+          <div class="voice-card reveal-up stagger-item">
+            <p class="voice-quote">自分たちらしい一日を、心から楽しめる形で実現してくれました。既存の結婚式では味わえない時間でした。</p>
+            <div class="voice-meta">
+              <div class="voice-avatar">H</div>
+              <div>
+                <div class="voice-name">H様ご夫妻</div>
+                <div class="voice-role">Free Style Wedding</div>
+              </div>
+            </div>
+          </div>
+          <div class="voice-card reveal-up stagger-item">
+            <p class="voice-quote">篠島の海を望むBBQ会場での結婚式。ゲストからも「こんな式は初めて」と大好評でした。</p>
+            <div class="voice-meta">
+              <div class="voice-avatar">M</div>
+              <div>
+                <div class="voice-name">M様ご夫妻</div>
+                <div class="voice-role">Shinojima Wedding</div>
+              </div>
+            </div>
+          </div>
+          <div class="voice-card reveal-up stagger-item">
+            <p class="voice-quote">初めての相談から当日まで、代表が直接サポートしてくださり、とても安心してお任せできました。</p>
+            <div class="voice-meta">
+              <div class="voice-avatar">K</div>
+              <div>
+                <div class="voice-name">K様ご夫妻</div>
+                <div class="voice-role">Corporate Event</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Curve Divider (Reverse) -->
-    <div class="section-divider fade-in">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path d="M0,100 C480,0 960,0 1440,100 L1440,100 L0,100 Z" fill="#fff"></path>
-      </svg>
-    </div>
+    <!-- NEWS Section -->
+    <section id="news" class="sec-pad">
+      <div class="container narrow-container">
+        <div class="sec-head reveal-up">
+          <span class="sec-num">04 / 07</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">News</p>
+            <h2 class="sec-title">お知らせ</h2>
+          </div>
+        </div>
+        <div id="news-list" class="reveal-up">
+          <div class="loading-state">読み込み中...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="sec-pad">
+      <div class="container">
+        <div class="sec-head reveal-up">
+          <span class="sec-num">05 / 07</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">Movie</p>
+            <h2 class="sec-title">ムービー</h2>
+          </div>
+        </div>
+        <div class="video-wrapper reveal-up spotlight">
+          <iframe
+            src="https://www.youtube.com/embed/ScMzIvxBSi4"
+            title="CIMA promotional video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
 
     <!-- Map Section -->
-    <section id="map" class="sec-pad">
-      <div class="container" style="max-width: 800px;">
-        <p class="sec-label">BASE / ACCESS</p>
-        <h2 class="sec-title" style="margin-bottom: 16px;">活動拠点</h2>
-        <p style="text-align: center; margin-bottom: 40px; color: var(--ink-light);">〒470-3505 愛知県知多郡南知多町篠島浦磯1-1<br>BBQ Dieux Terrace</p>
-        <div class="map-container fade-in" style="aspect-ratio: 16/9; background: var(--border); border-radius: var(--radius); overflow: hidden;">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13143.911029801842!2d137.00169385!3d34.6735515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6004976778f7e753%3A0xe211a76677e1d2c1!2zU2hpbm9qaW1h!5e0!3m2!1sen!2sjp!4v1713233000000!5m2!1sen!2sjp" 
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <section id="map" class="sec-pad bg-sand">
+      <div class="container">
+        <div class="sec-head reveal-up">
+          <span class="sec-num">06 / 07</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">Base / Access</p>
+            <h2 class="sec-title">活動拠点</h2>
+          </div>
+        </div>
+        <div class="map-split reveal-up">
+          <div class="map-info">
+            <div>
+              <div class="map-info-label">Location</div>
+              <p class="map-info-value">〒470-3505<br>愛知県知多郡南知多町<br>篠島浦磯1-1</p>
+            </div>
+            <div>
+              <div class="map-info-label">Venue</div>
+              <p class="map-info-value">BBQ Dieux Terrace</p>
+            </div>
+            <div>
+              <div class="map-info-label">Access</div>
+              <p class="map-info-value">名古屋港より高速船で約50分<br>師崎港より高速船で約10分</p>
+            </div>
+          </div>
+          <div class="map-wrapper spotlight">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13143.911029801842!2d137.00169385!3d34.6735515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6004976778f7e753%3A0xe211a76677e1d2c1!2zU2hpbm9qaW1h!5e0!3m2!1sen!2sjp!4v1713233000000!5m2!1sen!2sjp"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Instagram Feed CTA -->
-    <section class="sec-pad" style="background-color: #000; color: #fff; text-align: center;">
-       <div class="container fade-in">
-         <h2 style="font-family: var(--font-serif); margin-bottom: 24px;">Follow us on Instagram</h2>
-         <p style="opacity: 0.8; margin-bottom: 40px;">篠島での活動やウエディングの様子を日々更新しています。</p>
-         <a href="https://www.instagram.com/egashiratakashi_shinojima" target="_blank" class="btn btn-hero-secondary" style="border-radius: 40px; padding: 12px 60px;">@egashiratakashi_shinojima</a>
-       </div>
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="sec-pad" style="background-color: var(--main); position: relative; text-align: center; overflow: hidden;">
-      <div class="container" style="position: relative; z-index: 2; color: #fff;">
-        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 16px;">自由なウエディング、<br>はじめませんか？</h2>
-        <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 32px;">まずはオンラインでのご相談から承ります。お気軽にお問い合わせください。</p>
-        <a href="contact.html" class="btn btn-hero-primary" style="padding: 16px 48px;">無料相談はこちら</a>
+    <section id="cta" class="sec-pad final-cta">
+      <div class="container reveal-up">
+        <span class="sec-num on-dark-num">07 / 07 &mdash; CONTACT</span>
+        <h2 class="cta-title">自由なウエディング、<br>はじめませんか？</h2>
+        <p class="cta-subtitle">まずはオンラインでのご相談から承ります。お気軽にお問い合わせください。</p>
+        <a href="contact.html" class="btn btn-hero-primary btn-pill">お問い合わせはこちら</a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo">株式会社CIMA</div>
-      <div class="footer-info">
-        <p>〒470-3505 愛知県知多郡南知多町篠島浦磯1-1</p>
-        <p>TEL: 00-0000-0000</p>
-      </div>
-      <nav class="footer-nav" style="margin-top: 40px;">
-        <ul style="list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 0.75rem;">
-          <li><a href="index.html">TOP</a></li>
-          <li><a href="service.html">SERVICE</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
-          <li><a href="greeting.html">GREETING</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="wedding-venues.html">LOCATIONS</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="footer-copyright">
-      <p>© 2026 株式会社CIMA ALL RIGHTS RESERVED.</p>
-    </div>
-  </footer>
+  <div data-partial="footer"></div>
+  <div data-partial="floating"></div>
 
-  <!-- Floating CTA -->
-  <div class="floating-cta">
-    <a href="contact.html" class="btn btn-floating">お問い合わせ</a>
-  </div>
-
-  <!-- JS -->
-  <script src="js/hamburger.js"></script>
-  <script src="js/parallax.js"></script>
-  <script src="js/scroll-animation.js"></script>
-  <script src="js/cms.js"></script>
 </body>
 </html>

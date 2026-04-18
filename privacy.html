@@ -4,56 +4,75 @@
   <meta charset="UTF-8">
   <title>プライバシーポリシー | 株式会社CIMA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社CIMAのプライバシーポリシー。個人情報の取扱いに関する基本方針。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/scroll-animation.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="index.html" class="logo">株式会社CIMA</a>
-    <div class="nav-toggle"><span></span><span></span><span></span></div>
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html">TOP</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div data-partial="header"></div>
 
   <main>
-    <section class="sub-hero sec-pad" style="background: var(--bg-gray);">
+    <section class="sub-hero sec-pad">
       <div class="container">
-        <h2 class="sec-title">プライバシーポリシー</h2>
+        <div class="sec-head">
+          <span class="sec-num">PV / 01</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">Privacy Policy</p>
+            <h2 class="sec-title">プライバシーポリシー</h2>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="sec-pad">
-      <div class="container" style="max-width: 800px;">
-        <div class="card fade-in" style="padding: 40px; line-height: 1.8;">
-          <p>株式会社CIMA（以下、「当社」）は、本ウェブサイト上で提供するサービス（以下、「本サービス」）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」）を定めます。</p>
-          <h3 style="margin-top: 32px; border-left: 4px solid var(--main); padding-left: 12px;">第1条（個人情報）</h3>
-          <p>「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報（個人識別情報）を指します。</p>
-          <h3 style="margin-top: 32px; border-left: 4px solid var(--main); padding-left: 12px;">第2条（個人情報の収集方法）</h3>
-          <p>当社は、ユーザーが利用登録をする際に氏名、生年月日、住所、電話番号、メールアドレスなどの個人情報をお尋ねすることがあります。</p>
+      <div class="container">
+        <div class="legal-body fade-in">
+          <p>株式会社CIMA（以下「当社」）は、本ウェブサイト上で提供するサービス（以下「本サービス」）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定めます。</p>
+
+          <h3>第1条（個人情報）</h3>
+          <p>「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報を指します。</p>
+
+          <h3>第2条（個人情報の収集方法）</h3>
+          <p>当社は、ユーザーがお問い合わせや資料請求を行う際に、氏名、メールアドレス、電話番号、会社名などの個人情報をお尋ねすることがあります。</p>
+
+          <h3>第3条（個人情報を収集・利用する目的）</h3>
+          <p>当社が個人情報を収集・利用する目的は、以下のとおりです。</p>
+          <ul>
+            <li>本サービスの提供・運営のため</li>
+            <li>ユーザーからのお問い合わせに回答するため</li>
+            <li>新機能、更新情報、キャンペーン等の各種お知らせを送付するため</li>
+            <li>利用規約に違反したユーザーや不正・不当な目的で利用しようとするユーザーの特定のため</li>
+          </ul>
+
+          <h3>第4条（利用目的の変更）</h3>
+          <p>当社は、利用目的が変更前と関連性を有すると合理的に認められる場合に限り、個人情報の利用目的を変更するものとします。</p>
+
+          <h3>第5条（個人情報の第三者提供）</h3>
+          <p>当社は、次に掲げる場合を除いて、あらかじめユーザーの同意を得ることなく、第三者に個人情報を提供することはありません。</p>
+          <ul>
+            <li>法令に基づく場合</li>
+            <li>人の生命、身体又は財産の保護のために必要がある場合</li>
+            <li>公衆衛生の向上又は児童の健全な育成の推進のために特に必要がある場合</li>
+          </ul>
+
+          <h3>第6条（プライバシーポリシーの変更）</h3>
+          <p>本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、ユーザーに通知することなく変更することができるものとします。</p>
+
+          <h3>第7条（お問い合わせ窓口）</h3>
+          <p>本ポリシーに関するお問い合わせは、<a href="contact.html">お問い合わせフォーム</a> までお願いいたします。</p>
+
+          <p style="margin-top: 48px; text-align: right; color: var(--ink-muted); font-size: 0.85rem;">最終更新日: 2026年4月</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo">株式会社CIMA</div>
-      <div class="footer-info">
-        <p>〒470-3505 愛知県知多郡南知多町篠島浦磯1-1</p>
-        <p>TEL: 00-0000-0000</p>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <p>© 2026 株式会社CIMA ALL RIGHTS RESERVED.</p>
-    </div>
-  </footer>
-  <div class="floating-cta">
-    <a href="contact.html" class="btn btn-floating">お問い合わせ</a>
-  </div>
-  <script src="js/hamburger.js" defer></script>
-  <script src="js/scroll-animation.js" defer></script>
+  <div data-partial="footer"></div>
+  <div data-partial="floating"></div>
 </body>
 </html>

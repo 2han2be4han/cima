@@ -4,63 +4,42 @@
   <meta charset="UTF-8">
   <title>ロケーション一覧 | 株式会社CIMA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/scroll-animation.js" defer></script>
+  <script src="js/cms.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="index.html" class="logo">株式会社CIMA</a>
-    <div class="nav-toggle"><span></span><span></span><span></span></div>
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html">TOP</a></li>
-        <li><a href="service.html">SERVICE</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="wedding-venues.html">LOCATIONS</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div data-partial="header"></div>
 
   <main>
-    <section class="sub-hero sec-pad" style="background: var(--bg-gray);">
+    <section class="sub-hero sec-pad bg-gray">
       <div class="container">
-        <p class="sec-label">LOCATIONS</p>
-        <h2 class="sec-title">ウェディング・ロケーション一覧</h2>
+        <div class="sec-head">
+          <span class="sec-num">LOC / 01</span>
+          <div class="sec-head-inner">
+            <p class="sec-label">Locations</p>
+            <h2 class="sec-title">ウェディング・ロケーション一覧</h2>
+            <p class="sub-hero-lead">特定の式場に縛られない、自由な結婚式を叶えるための場所。篠島を中心に、私たちが厳選した特別なロケーションをご紹介します。</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="sec-pad">
       <div class="container">
-        <p style="text-align: center; color: var(--ink-light); margin-bottom: 48px;">
-          特定の式場に縛られない、自由な結婚式を叶えるための場所。<br>
-          篠島を中心に、私たちが厳選した特別なロケーションをご紹介します。
-        </p>
-        
-        <!-- CMS Injection Grid -->
-        <div class="grid-r" id="location-grid" style="grid-template-columns: repeat(2, 1fr); gap: 40px;">
-          <!-- js/cms.js will inject locations here -->
-          <div style="text-align: center; grid-column: 1 / -1; padding: 60px; color: var(--ink-muted);">読み込み中...</div>
+        <div class="location-grid" id="location-grid">
+          <div class="location-loading">読み込み中...</div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo">株式会社CIMA</div>
-      <div class="footer-info">
-        <p>〒470-3505 愛知県知多郡南知多町篠島浦磯1-1</p>
-        <p>TEL: 00-0000-0000</p>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <p>© 2026 株式会社CIMA ALL RIGHTS RESERVED.</p>
-    </div>
-  </footer>
-  <div class="floating-cta">
-    <a href="contact.html" class="btn btn-floating">お問い合わせ</a>
-  </div>
-  <script src="js/hamburger.js" defer></script>
-  <script src="js/scroll-animation.js" defer></script>
-  <script src="js/cms.js" defer></script>
+  <div data-partial="footer"></div>
+  <div data-partial="floating"></div>
 </body>
 </html>

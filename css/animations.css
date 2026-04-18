@@ -1,8 +1,8 @@
 /* Scroll Fade In */
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+  transform: translateY(40px);
+  transition: opacity 1s var(--transition), transform 1s var(--transition);
 }
 
 .fade-in.is-visible {
@@ -10,11 +10,23 @@
   transform: translateY(0);
 }
 
-/* Section-wise staggered delay example */
-.stagger-item {
+/* Slide Reveal - subtle editorial fade */
+.reveal-up {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s var(--transition), transform 0.6s var(--transition);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Effects */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .stagger-item.is-visible {
@@ -22,43 +34,123 @@
   transform: translateY(0);
 }
 
-/* Curtain Animation */
+/* Text Reveal Animation */
+.text-reveal {
+  overflow: hidden;
+  display: block;
+}
+
+.text-reveal > span {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 1s var(--transition);
+}
+
+.text-reveal.is-visible > span {
+  transform: translateY(0);
+}
+
+/* Curtain - Shinojima Sunset (photo-realistic) */
 .curtain-overlay {
   position: fixed;
+  inset: 0;
+  z-index: 9999;
+  /* If you save a real photo to images/hero/shinojima-sunset.jpg it will be used */
+  background:
+    url('../images/松島の夕日_2017-12-02_16-34-25.jpg') center / cover no-repeat,
+    /* Painterly sunset sky fallback */
+    radial-gradient(ellipse 80% 40% at 35% 58%, rgba(255, 200, 120, 0.55) 0%, transparent 55%),
+    radial-gradient(circle at 32% 60%, rgba(255, 140, 60, 0.75) 0%, transparent 35%),
+    linear-gradient(180deg,
+      #3a4560 0%,
+      #5d5670 18%,
+      #a87560 38%,
+      #e88a4a 55%,
+      #f2a85e 65%,
+      #d56a35 72%,
+      #7a3a2a 82%,
+      #2e3543 92%,
+      #1a2230 100%);
+  transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Subtle vignette to make logo readable over the photo */
+.curtain-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 45%, rgba(0, 0, 0, 0.25) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, transparent 40%, transparent 70%, rgba(0, 0, 0, 0.35) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Curtain waves at bottom (dark silhouette of sea) */
+.curtain-waves {
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  z-index: 9999;
-  background-color: var(--main);
-  transition: transform 2.2s cubic-bezier(0.7, 0, 0.3, 1), opacity 2.2s ease;
+  height: 14vh;
+  min-height: 90px;
   pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 2;
+  opacity: 0.6;
 }
+.curtain-waves svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.curtain-waves use {
+  animation: move-forever 18s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.curtain-waves use:nth-child(1) { animation-delay: -2s; animation-duration: 8s; }
+.curtain-waves use:nth-child(2) { animation-delay: -3s; animation-duration: 12s; }
+.curtain-waves use:nth-child(3) { animation-delay: -4s; animation-duration: 16s; }
 
 .curtain-logo {
+  position: relative;
+  z-index: 4;
   color: #fff;
   font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: clamp(1.75rem, 4.5vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: 0.4em;
   opacity: 1;
-  transition: opacity 1.2s ease;
+  transition: opacity 0.8s ease;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 180, 100, 0.25);
+  margin-top: 0;
+  margin-bottom: 30vh;
+}
+
+.curtain-logo::after {
+  content: 'Shinojima';
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.7em;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
 }
 
 .curtain-overlay.is-opened {
   transform: translateY(-100%);
-  opacity: 1;
 }
 
-.curtain-overlay.is-opened .curtain-logo {
+.curtain-overlay.is-opened .curtain-logo,
+.curtain-overlay.is-opened .curtain-island,
+.curtain-overlay.is-opened .curtain-grass {
   opacity: 0;
-}
-
-.curtain-panel {
-  display: none; /* 一枚のパネルとしてoverlay自体を動かすため非表示に */
+  transition: opacity 0.5s ease;
 }
 
 /* Scroll Lock */
@@ -66,22 +158,13 @@ body.is-locked {
   overflow: hidden;
 }
 
-/* Hover Effects */
-.hover-scale {
-  transition: transform 0.3s var(--transition);
-}
-
-.hover-scale:hover {
-  transform: scale(1.05);
-}
-
 /* Waves Animation */
 .waves {
   position: relative;
   width: 100%;
-  height: 15vh;
-  margin-bottom: -7px;
-  min-height: 100px;
+  height: 12vh;
+  margin-bottom: -1px;
+  min-height: 80px;
   max-height: 150px;
 }
 
@@ -106,10 +189,31 @@ body.is-locked {
 }
 
 @keyframes move-forever {
-  0% {
-   transform: translate3d(-90px,0,0);
-  }
-  100% { 
-    transform: translate3d(85px,0,0);
-  }
+  0% { transform: translate3d(-90px,0,0); }
+  100% { transform: translate3d(85px,0,0); }
+}
+
+/* Spotlight Effect Helper */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(114, 47, 55, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
 }
