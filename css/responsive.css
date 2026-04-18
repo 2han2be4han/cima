@@ -58,15 +58,22 @@
     background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.65)) !important;
   }
 
-  /* Curtain — adjust photo focus for portrait viewport */
+  /* Curtain — use dynamic viewport so mobile browser chrome doesn't crop it */
   .curtain-overlay {
+    height: 100svh !important;
+    min-height: 100dvh !important;
     background-size: cover !important;
-    background-position: 38% 50% !important;
+    background-position: 38% 45% !important;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
   }
   .curtain-logo {
     font-size: clamp(1.25rem, 5vw, 2rem) !important;
-    margin-bottom: 20vh !important;
+    margin-bottom: 12vh !important;
     letter-spacing: 0.3em !important;
+  }
+  .curtain-waves {
+    height: 10vh !important;
+    min-height: 70px !important;
   }
 
   .sec-title {
@@ -74,11 +81,11 @@
     margin-bottom: 32px;
   }
 
-  /* Floating CTA Mobile — pill at bottom-right (NOT full-width bar) */
+  /* Floating CTA Mobile — pill at bottom-right, respect iOS safe area */
   .floating-cta {
     position: fixed !important;
-    right: 16px !important;
-    bottom: 16px !important;
+    right: calc(16px + env(safe-area-inset-right)) !important;
+    bottom: calc(16px + env(safe-area-inset-bottom)) !important;
     left: auto !important;
     width: auto !important;
     top: auto !important;
