@@ -16,20 +16,57 @@
   }
 
   body {
-    font-size: 0.9375rem; /* Smaller font size as per specification */
+    font-size: 0.9375rem;
   }
 
   .grid-r {
     grid-template-columns: 1fr !important;
   }
 
+  /* Hero — fit the landscape photo without cutting off the sun/island */
+  .hero-section {
+    height: auto;
+    min-height: 560px;
+    background-size: cover;
+    background-position: 35% 55%; /* pull toward sun + horizon */
+    padding: 80px 0 220px; /* room for title + space for waves at bottom */
+  }
   .hero-inner {
-    padding: 40px 24px !important;
+    padding: 0 24px !important;
     text-align: left !important;
   }
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.75rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
+  }
+  .hero-desc {
+    font-size: 0.95rem !important;
+    margin-bottom: 28px !important;
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .hero-btns .btn {
+    width: 100%;
+    padding: 14px 20px;
+  }
+  /* Darker overlay on mobile for readability */
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.65)) !important;
+  }
 
-  .hero-inner h1 {
-    font-size: 1.75rem !important;
+  /* Curtain — adjust photo focus for portrait viewport */
+  .curtain-overlay {
+    background-size: cover !important;
+    background-position: 38% 50% !important;
+  }
+  .curtain-logo {
+    font-size: clamp(1.25rem, 5vw, 2rem) !important;
+    margin-bottom: 20vh !important;
+    letter-spacing: 0.3em !important;
   }
 
   .sec-title {
@@ -37,28 +74,29 @@
     margin-bottom: 32px;
   }
 
-  /* Floating CTA Mobile - full width bar (JSON: floatingCtaFullWidth: true) */
+  /* Floating CTA Mobile — pill at bottom-right (NOT full-width bar) */
   .floating-cta {
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    position: fixed !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    left: auto !important;
+    width: auto !important;
+    top: auto !important;
   }
-
   .btn-floating {
-    display: flex;
-    width: 100%;
-    padding: 14px 20px;
-    font-size: 0.875rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(193, 62, 62, 0.35);
+    display: inline-flex !important;
+    width: auto !important;
+    padding: 13px 22px !important;
+    font-size: 0.8rem !important;
+    border-radius: 100px !important;
   }
 
-  /* Hide regular header items if any */
+  /* Reduce pine decoration size on mobile so it doesn't overpower */
+  .pine-silhouette.right-edge,
+  .pine-silhouette.left-edge {
+    opacity: 0.08;
+  }
+
   .btn-hdr {
     display: none;
   }
